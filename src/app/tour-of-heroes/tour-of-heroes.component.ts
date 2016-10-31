@@ -21,10 +21,11 @@ const HEROES: Hero[] = [
 })
 
 export class TourOfHeroesComponent {
-    title = 'Tour of Heroes';
-    hero: Hero = {
-                  id: 1,
-                  name: 'Windstorm'
-    };
-    heroes = HEROES;
+    public heroes = HEROES;
+    public title = 'Tour of Heroes';
+    public selectedHero: Hero;
+    
+    public onSelect(hero: Hero): void {
+        this.selectedHero = hero;
+    }
 }
