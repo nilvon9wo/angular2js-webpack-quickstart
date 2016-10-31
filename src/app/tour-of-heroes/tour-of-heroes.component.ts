@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Hero } from '../hero/hero.component';
+import { Hero } from '../hero/hero';
 
 @Component({
     selector: 'tour-of-heroes',
