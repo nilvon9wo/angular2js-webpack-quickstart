@@ -8,6 +8,7 @@ import { Hero } from '../hero/hero';
 })
 
 export class TourOfHeroesComponent {
+    title = 'Tour of Heroes';
     hero: Hero = {
                   id: 1,
                   name: 'Windstorm'
