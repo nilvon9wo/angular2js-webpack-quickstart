@@ -26,4 +26,5 @@ export class TourOfHeroesComponent {
                   id: 1,
                   name: 'Windstorm'
     };
+    heroes = HEROES;
 }
