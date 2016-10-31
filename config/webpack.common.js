@@ -38,7 +38,7 @@ const
 HMR = helpers.hasProcessFlag('hot');
 const
 METADATA = {
-    title : 'Angular QuickStart with Angular2-Webpack-Starter',
+    title : 'Tour of Heroes',
     baseUrl : '/',
     isDevServer : helpers.isWebpackDevServer()
 };

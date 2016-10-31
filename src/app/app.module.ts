@@ -1,10 +1,10 @@
-import { AppComponent } from './app.component';
+import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 @NgModule({
-    bootstrap: [ AppComponent ],
-    declarations: [ AppComponent ],
+    bootstrap: [ TourOfHeroesComponent ],
+    declarations: [ TourOfHeroesComponent ],
     imports: [ BrowserModule ]
 })
 
