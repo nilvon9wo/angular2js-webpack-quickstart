@@ -14,7 +14,7 @@ span.active {
 	width: 15em;
 }
 
-.tour-of-heroes--badge {
+.hero--badge {
   display: inline-block;
   font-size: small;
   color: white;
@@ -29,17 +29,7 @@ span.active {
   border-radius: 4px 0 0 4px;
 }
 
-.tour-of-heroes--selected {
-  background-color: #CFD8DC !important;
-  color: white;
-}
-
-.tour-of-heroes--text {
-  position: relative;
-  top: -3px;
-}
-
-.tour-of-heroes li {
+.hero {
   cursor: pointer;
   position: relative;
   left: 0;
@@ -50,13 +40,24 @@ span.active {
   border-radius: 4px;
 }
 
-.tour-of-heroes li:hover {
-	color: #607D8B;
-	background-color: #DDD;
-	left: .1em;
+.hero:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
 }
 
-.tour-of-heroes li.selected:hover {
+.hero--selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+
+.hero--selected:hover {
   background-color: #BBD8DC !important;
   color: white;
 }
+
+.hero--text {
+  position: relative;
+  top: -3px;
+}
+
