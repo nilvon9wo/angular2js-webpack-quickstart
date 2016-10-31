@@ -1,6 +1,6 @@
 {
-  "name": "angular2-webpack-starter",
-  "version": "5.1.1",
+  "name": "angular2js-webpack-quickstart",
+  "version": "1.0.0",
   "description": "An Angular 2 Webpack Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
   "keywords": [
     "angular2",
@@ -9,7 +9,12 @@
   ],
   "author": "Patrick Stapleton <patrick@angularclass.com>",
   "homepage": "https://github.com/angularclass/angular2-webpack-starter",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/angular/angular.io/blob/master/LICENSE"
+    }
+  ],
   "scripts": {
     "build:dev": "webpack --config config/webpack.dev.js --progress --profile",
     "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
@@ -68,20 +73,26 @@
     "@angular/platform-browser-dynamic": "2.1.1",
     "@angular/platform-server": "2.1.1",
     "@angular/router": "3.1.1",
+    "@angular/upgrade": "~2.1.1",
     "@angularclass/conventions-loader": "^1.0.2",
     "@angularclass/hmr": "~1.2.0",
     "@angularclass/hmr-loader": "~3.0.2",
+    "angular-in-memory-web-api": "~0.1.13",
     "assets-webpack-plugin": "^3.4.0",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "http-server": "^0.9.0",
     "ie-shim": "^0.1.0",
+    "reflect-metadata": "^0.1.8",
     "rxjs": "^5.0.0-rc.1",
-    "zone.js": "~0.6.17"
+    "systemjs": "0.19.39",
+    "zone.js": "~0.6.25"
   },
   "devDependencies": {
+    "@types/core-js": "^0.9.34",
     "@types/hammerjs": "^2.0.33",
     "@types/jasmine": "^2.2.34",
-    "@types/node": "^6.0.38",
+    "@types/node": "^6.0.45",
     "@types/protractor": "^1.5.20",
     "@types/selenium-webdriver": "2.44.29",
     "@types/source-map": "^0.1.27",
@@ -90,6 +101,7 @@
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^2.2.1",
     "codelyzer": "~1.0.0-beta.2",
+    "concurrently": "^3.0.0",
     "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.25.0",
     "exports-loader": "^0.6.3",
