@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hero } from '../hero/hero.component';
 
 @Component({
     selector: 'tour-of-heroes',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 
 export class TourOfHeroesComponent {
-    title = 'Tour of Heroes';
-    hero = 'windstorm';
+    hero: Hero = {
+                  id: 1,
+                  name: 'Windstorm'
+    };
 }
