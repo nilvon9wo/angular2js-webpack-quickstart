@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'tour-of-heroes',
-    template: '<h1>{{title}}</h1><h2>{{hero}} details!</h2>'
+    styles: [require('./tour-of-heroes.component.css')],
+    template: require( './tour-of-heroes.component.html' )
 })
 
 export class TourOfHeroesComponent {
