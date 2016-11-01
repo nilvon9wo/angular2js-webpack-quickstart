@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Hero } from '../heroes/hero';
 import { HeroDaoService } from '../heroes/hero-dao/hero-dao.service';
 
-@Component({
+@Component( {
     providers: [HeroDaoService],
     selector: 'dashboard',
     template: require( './dashboard.component.html' )
@@ -12,14 +13,18 @@ import { HeroDaoService } from '../heroes/hero-dao/hero-dao.service';
 export class DashboardComponent implements OnInit {
     public heroes: Hero[] = [];
 
-    constructor(private heroDaoService: HeroDaoService) { }
-    
+    constructor(
+        private heroDaoService: HeroDaoService,
+        private router: Router
+    ) { }
+
     public ngOnInit(): void {
         this.heroDaoService.getHeroes()
-            .then(heroes => this.heroes = heroes.slice(1, 5));
+            .then( heroes => this.heroes = heroes.slice( 1, 5 ) );
     }
 
-    public gotoDetail(hero: Hero): void {
-        // TODO
+    public gotoDetail( hero: Hero ): void {
+        const heroDetailsById = ['/hero', hero.id];
+        this.router.navigate( heroDetailsById );
     }
 }

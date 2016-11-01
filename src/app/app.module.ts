@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './tour-of-heroes/dashboard/dashboard.component';
 import { HeroDetailsComponent } from './tour-of-heroes/heroes/hero-details/hero-details.component';
@@ -18,7 +18,7 @@ import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component
               RouterModule.forRoot([
                                     { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
                                     { path: 'dashboard', component: DashboardComponent  },
-                                    { path: 'detail/:id', component: HeroDetailsComponent  },
+                                    { path: 'hero/:id', component: HeroDetailsComponent  },
                                     { path: 'heroes', component: HeroListComponent }
                                     ])
             ],
