@@ -9,6 +9,7 @@ import './rxjs-extensions';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryHeroDataService } from './tour-of-heroes/heroes/hero-data/in-memory-hero-data.service';
 
+import { AppTitleComponent } from './app-title/app-title.component';
 import { DashboardComponent } from './tour-of-heroes/dashboard/dashboard.component';
 import { HeroDetailsComponent } from './tour-of-heroes/heroes/hero-details/hero-details.component';
 import { HeroDaoService } from './tour-of-heroes/heroes/hero-data/hero-dao.service';
@@ -21,6 +22,7 @@ import { HighlightDirective } from './highlight.directive';
 @NgModule( {
     bootstrap: [TourOfHeroesComponent],
     declarations: [
+        AppTitleComponent,
         DashboardComponent,
         HeroDetailsComponent,
         HeroListComponent,

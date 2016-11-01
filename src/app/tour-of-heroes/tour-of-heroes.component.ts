@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class TourOfHeroesComponent {
-    public title = 'Tour of Heroes';
+    public subtitle = 'v1';
 }
