@@ -3,22 +3,16 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { ContactRoutingModule } from './contact-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
-import { AwesomePipe } from './awesome.pipe';
 import { ContactDaoService } from './contact-data/contact-dao.service';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
-import { HighlightDirective } from './highlight.directive';
 
 @NgModule( {
-    declarations: [
-        AwesomePipe,
-        ContactDetailComponent,
-        HighlightDirective
-    ],
+    declarations: [ContactDetailComponent],
     imports: [
-        CommonModule,
         ContactRoutingModule,
-        FormsModule
+        SharedModule
     ],
     providers: [ContactDaoService]
 })

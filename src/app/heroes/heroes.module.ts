@@ -10,7 +10,6 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component';
 import { HeroDaoService } from './hero-data/hero-dao.service';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { HighlightDirective } from './highlight.directive';
 
 @NgModule( {
     declarations: [
@@ -19,9 +18,7 @@ import { HighlightDirective } from './highlight.directive';
         HeroDetailsComponent,
         HeroListComponent,
         HeroSearchComponent,
-        HighlightDirective
     ],
-    //exports: [HeroDashboardComponent],
     imports: [
         CommonModule,
         FormsModule,

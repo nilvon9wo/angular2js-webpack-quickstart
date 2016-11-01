@@ -1,7 +1,7 @@
 import { Component }   from '@angular/core';
 
 import { HeroDaoService } from '../hero-data/hero-dao.service';
-import { UserService } from '../../users/user.service';
+import { UserService } from '../../core/users/user.service';
 
 @Component({
     template: require( './hero.component.html' ),

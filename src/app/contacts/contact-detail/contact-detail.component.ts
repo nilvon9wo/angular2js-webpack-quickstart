@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Contact } from '../contact';
 import { ContactDaoService } from '../contact-data/contact-dao.service';
-import { UserService } from '../../users/user.service';
+import { UserService } from '../../core/users/user.service';
 
 @Component( {
     selector: 'contact-detail',
