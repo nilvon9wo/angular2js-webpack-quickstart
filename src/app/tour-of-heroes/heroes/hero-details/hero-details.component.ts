@@ -7,6 +7,7 @@ import { HeroDaoService } from '../hero-dao/hero-dao.service';
 
 @Component( {
     selector: 'hero-details',
+    styles: [require('./hero-details.component.css')],
     template: require( './hero-details.component.html' )
 })
 
