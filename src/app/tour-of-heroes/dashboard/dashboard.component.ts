@@ -23,8 +23,8 @@ export class DashboardComponent implements OnInit {
             .then( heroes => this.heroes = heroes.slice( 1, 5 ) );
     }
 
-    public gotoDetail( hero: Hero ): void {
-        const heroDetailsById = ['/hero', hero.id];
+    public gotoDetail( selectedHero: Hero ): void {
+        const heroDetailsById = ['/hero', selectedHero.id];
         this.router.navigate( heroDetailsById );
     }
 }

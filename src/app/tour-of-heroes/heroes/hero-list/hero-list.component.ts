@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroDaoService } from '../hero-dao/hero-dao.service';
@@ -11,19 +13,25 @@ import { HeroDaoService } from '../hero-dao/hero-dao.service';
 
 export class HeroListComponent implements OnInit {
     public heroes: Hero[];
-    public title = 'Tour of Heroes';
     public selectedHero: Hero;
     
-    constructor(private heroDaoService: HeroDaoService) { 
-    }
+    constructor(
+        private heroDaoService: HeroDaoService,
+        private router: Router
+    ) { }
     
-    public ngOnInit(): void {
-        this.initHeroes();
+    public gotoDetail( hero: Hero ): void {
+        const heroDetailsById = ['/hero', this.selectedHero.id];
+        this.router.navigate( heroDetailsById );
     }
     
     public initHeroes(): void {
         this.heroDaoService.getHeroes()
             .then(heroes => this.heroes = heroes);
+    }
+    
+    public ngOnInit(): void {
+        this.initHeroes();
     }
     
     public onSelect(hero: Hero): void {
