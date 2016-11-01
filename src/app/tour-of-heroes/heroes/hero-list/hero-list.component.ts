@@ -17,7 +17,7 @@ export class HeroListComponent implements OnInit {
     constructor(private heroDaoService: HeroDaoService) { 
     }
     
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.initHeroes();
     }
     
