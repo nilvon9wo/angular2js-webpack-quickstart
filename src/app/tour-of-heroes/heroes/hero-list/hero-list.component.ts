@@ -20,6 +20,19 @@ export class HeroListComponent implements OnInit {
         private router: Router
     ) { }
     
+    public add(name: String): void {
+        name = name.trim();
+        if (!name) {
+            return;
+        }
+        
+        this.heroDaoService.create(name)
+            .then(hero => {
+                this.heroes.push(hero);
+                this.selectedHero = null;
+            });
+    }
+    
     public gotoDetail( hero: Hero ): void {
         const heroDetailsById = ['/hero', this.selectedHero.id];
         this.router.navigate( heroDetailsById );

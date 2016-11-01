@@ -11,6 +11,14 @@ export class HeroDaoService {
     private heroesUrl = 'api/heroes';
 
     constructor( private http: Http ) { }
+    
+    public create(name: String): Promise<Hero> {
+        return this.http
+            .post(this.heroesUrl, JSON.stringify({name}), {headers: this.headers})
+            .toPromise()
+            .then(response => response.json().data)
+            .catch(this.handleError);
+    }
 
     public getHero( id: number ): Promise<Hero> {
         return this.getHeroes()
