@@ -1,0 +1,28 @@
+.contact-detail--message {
+	background-color: whitesmoke;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: blue;
+	margin-bottom: 20px;
+}
+
+.contact-form--alert {
+	border: 1px solid transparent;
+	border-radius: 4px;
+	margin: 8px 0;
+	padding: 15px;
+}
+
+.contact-form--alert--danger {
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	color: #a94442;
+}
+
+.ng-invalid {
+	border-left: 5px solid #a94442;
+}
+
+.ng-valid[required] {
+	border-left: 5px solid #42A948;
+}
