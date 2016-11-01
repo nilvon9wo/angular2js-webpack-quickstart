@@ -17,7 +17,7 @@ export class ContactDetailComponent implements OnInit {
     public userName = '';
 
     constructor(
-        private contactService: ContactDaoService,
+        private contactDaoService: ContactDaoService,
         userService: UserService
     ) {
         this.userName = userService.userName;
@@ -43,7 +43,7 @@ export class ContactDetailComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this.contactService.getContacts()
+        this.contactDaoService.getContacts()
             .then( contacts => {
                 this.message = '';
                 this.contacts = contacts;
