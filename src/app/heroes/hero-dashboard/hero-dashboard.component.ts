@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Hero } from '../heroes/hero';
-import { HeroDaoService } from '../heroes/hero-data/hero-dao.service';
+import { Hero } from '../hero';
+import { HeroDaoService } from '../hero-data/hero-dao.service';
 
 @Component( {
     providers: [HeroDaoService],
-    selector: 'dashboard',
-    styles: [require('./dashboard.component.css')],
-    template: require( './dashboard.component.html' )
+    selector: 'hero-dashboard',
+    styles: [require('./hero-dashboard.component.css')],
+    template: require( './hero-dashboard.component.html' )
 })
 
-export class DashboardComponent implements OnInit {
+export class HeroDashboardComponent implements OnInit {
     public heroes: Hero[] = [];
 
     constructor(
