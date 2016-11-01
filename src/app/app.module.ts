@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
 
+import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './tour-of-heroes/dashboard/dashboard.component';
 import { HeroDetailsComponent } from './tour-of-heroes/heroes/hero-details/hero-details.component';
 import { HeroDaoService } from './tour-of-heroes/heroes/hero-dao/hero-dao.service';
@@ -13,14 +13,9 @@ import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component
     bootstrap: [ TourOfHeroesComponent ],
     declarations: [ DashboardComponent, HeroDetailsComponent, HeroListComponent, TourOfHeroesComponent ],
     imports: [
+              AppRoutingModule,
               BrowserModule,
-              FormsModule,
-              RouterModule.forRoot([
-                                    { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
-                                    { path: 'dashboard', component: DashboardComponent  },
-                                    { path: 'hero/:id', component: HeroDetailsComponent  },
-                                    { path: 'heroes', component: HeroListComponent }
-                                    ])
+              FormsModule
             ],
     providers: [ HeroDaoService ]
 })
