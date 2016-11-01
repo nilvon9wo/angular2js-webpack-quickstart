@@ -16,9 +16,18 @@ import { HeroListComponent } from './tour-of-heroes/heroes/hero-list/hero-list.c
 import { HeroSearchComponent } from './tour-of-heroes/heroes/hero-search/hero-search.component';
 import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component';
 
+import { HighlightDirective } from './highlight.directive';
+
 @NgModule( {
     bootstrap: [TourOfHeroesComponent],
-    declarations: [DashboardComponent, HeroDetailsComponent, HeroListComponent, HeroSearchComponent, TourOfHeroesComponent],
+    declarations: [
+        DashboardComponent,
+        HeroDetailsComponent,
+        HeroListComponent,
+        HeroSearchComponent,
+        HighlightDirective,
+        TourOfHeroesComponent
+    ],
     imports: [
         AppRoutingModule,
         BrowserModule,
