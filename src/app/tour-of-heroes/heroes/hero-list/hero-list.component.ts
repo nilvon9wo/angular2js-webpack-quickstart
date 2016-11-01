@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { HeroDaoService } from '../hero-dao/hero-dao.service';
+import { HeroDaoService } from '../hero-data/hero-dao.service';
 
 @Component({
     providers: [HeroDaoService],

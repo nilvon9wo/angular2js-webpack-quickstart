@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
-import { HeroDaoService } from '../hero-dao/hero-dao.service';
+import { HeroDaoService } from '../hero-data/hero-dao.service';
 
 @Component( {
     selector: 'hero-details',
