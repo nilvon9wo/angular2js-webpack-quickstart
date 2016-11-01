@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { UserService } from '../users/user.service';
 
 @Component({
     selector: 'app-title',
@@ -9,5 +10,10 @@ import { Component, Input } from '@angular/core';
 export class AppTitleComponent {
     @Input() subtitle = '';
     public title = 'Tour of Heroes';
+    user = '';
+    
+    constructor(userService: UserService) {
+        this.user = userService.userName;
+    }
 }
 

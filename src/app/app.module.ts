@@ -15,9 +15,10 @@ import { HeroDetailsComponent } from './tour-of-heroes/heroes/hero-details/hero-
 import { HeroDaoService } from './tour-of-heroes/heroes/hero-data/hero-dao.service';
 import { HeroListComponent } from './tour-of-heroes/heroes/hero-list/hero-list.component';
 import { HeroSearchComponent } from './tour-of-heroes/heroes/hero-search/hero-search.component';
-import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component';
-
 import { HighlightDirective } from './highlight.directive';
+import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component';
+import { UserService } from './users/user.service';
+
 
 @NgModule( {
     bootstrap: [TourOfHeroesComponent],
@@ -37,7 +38,7 @@ import { HighlightDirective } from './highlight.directive';
         HttpModule,
         InMemoryWebApiModule.forRoot( InMemoryHeroDataService )
     ],
-    providers: [HeroDaoService]
+    providers: [HeroDaoService, UserService]
 })
 
 export class AppModule { }
