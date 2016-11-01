@@ -19,7 +19,7 @@ nav a {
 	border-radius: 4px;
 }
 
-nav a.active {
+nav a.tour-of-heroes--nav--active {
 	color: #039be5;
 }
 
@@ -32,7 +32,7 @@ nav a:link, a:visited {
 	color: #607D8B;
 }
 
-span.active {
+span.tour-of-heroes--nav--active {
 	background-color: gray;
 }
 
