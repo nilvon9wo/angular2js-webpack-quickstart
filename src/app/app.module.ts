@@ -18,6 +18,7 @@ import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component
               RouterModule.forRoot([
                                     { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
                                     { path: 'dashboard', component: DashboardComponent  },
+                                    { path: 'detail/:id', component: HeroDetailsComponent  },
                                     { path: 'heroes', component: HeroListComponent }
                                     ])
             ],
