@@ -30,6 +30,14 @@
   left: .1em;
 }
 
+.hero--button--delete {
+	background-color: gray !important;
+	color: white;
+  float: right;
+  margin-top: 2px;
+  margin-right: .8em;
+}
+
 .hero--selected {
   background-color: #CFD8DC !important;
   color: white;

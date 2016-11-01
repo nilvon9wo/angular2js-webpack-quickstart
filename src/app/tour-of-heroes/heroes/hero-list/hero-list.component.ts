@@ -33,6 +33,16 @@ export class HeroListComponent implements OnInit {
             });
     }
     
+    public delete(deletedHero: Hero): void {
+        this.heroDaoService.delete(deletedHero.id)
+            .then(() => {
+                this.heroes = this.heroes.filter(hero => hero !== deletedHero);
+                if (this.selectedHero === deletedHero) {
+                    this.selectedHero = null;
+                }
+            });
+    }
+    
     public gotoDetail( hero: Hero ): void {
         const heroDetailsById = ['/hero', this.selectedHero.id];
         this.router.navigate( heroDetailsById );
