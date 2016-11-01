@@ -1,0 +1,15 @@
+.hero-search--search-result{
+  background-color: white;
+  cursor: pointer;
+	border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  height: 20px;
+  padding: 5px;
+  width:195px;
+}
+
+.hero-search--search-box{
+  height: 20px;
+	width: 200px;
+}
