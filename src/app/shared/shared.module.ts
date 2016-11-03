@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { AwesomePipe } from './awesome.pipe';
-import { HighlightDirective } from './highlight.directive';
+import { HighlightDirective } from './highlight/highlight.directive';
+import { HighlightDirectiveConfig } from './highlight/highlight-directive-config';
 
 @NgModule( {
     declarations: [AwesomePipe, HighlightDirective],
@@ -11,4 +12,14 @@ import { HighlightDirective } from './highlight.directive';
     imports: [CommonModule]
 })
 
-export class SharedModule { }
+export class SharedModule { 
+    static forChild( config: HighlightDirectiveConfig ): ModuleWithProviders {
+        return {
+            ngModule: SharedModule,
+            providers: [{
+                provide: HighlightDirectiveConfig,
+                useValue: config
+            }]
+        }
+    }
+}
