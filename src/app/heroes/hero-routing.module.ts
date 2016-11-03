@@ -1,13 +1,13 @@
 import { NgModule }     from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HeroComponent } from './hero/hero.component';
 import { HeroDetailsComponent }from './hero-details/hero-details.component';
+import { HeroHeaderComponent } from './hero-header/hero-header.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 
 const routes: Routes = [
   { path: '',
-    component: HeroComponent,
+    component: HeroHeaderComponent,
     children: [
       { path: '',    component: HeroListComponent },
       { path: ':id', component: HeroDetailsComponent }

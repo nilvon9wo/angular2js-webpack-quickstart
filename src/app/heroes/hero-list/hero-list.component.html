@@ -1,19 +1,16 @@
-<h2 highlight>My Heroes</h2>
+<h3 highlight>My Heroes</h3>
 <ul class="tour-of-heroes">
-	<li *ngFor="let hero of heroes" class="hero"
-		[class.hero--selected]="hero === selectedHero"
-		(click)="onSelect(hero)"><span class="hero--badge">{{hero.id}}</span>
-		<span>{{hero.name}}</span>
-		<button class="hero--button--delete"
-			(click)="delete(hero); $event.stopPropagation()">x</button></li>
+    <li
+        *ngFor="let hero of heroes"
+        class="hero"
+        [class.hero--selected]="hero === selectedHero"
+    ><a routerLink="{{hero.id}}"><span class="hero--badge">{{hero.id}}</span>
+            <span>{{hero.name}}</span></a>
+        <button
+            class="hero--button--delete"
+            (click)="delete(hero); $event.stopPropagation()"
+        >x</button></li>
+    <li class="hero"><label>New hero name: <input #heroName /></label>
+        <button (click)="add(heroName.value); heroName.value=''">Add</button>
+    </li>
 </ul>
-
-<div *ngIf="selectedHero">
-	<h2>{{selectedHero.name | uppercase}} is the hero</h2>
-	<button (click)="gotoDetail()">View Details</button>
-</div>
-
-<div>
-	<label>Hero name:</label> <input #heroName />
-	<button (click)="add(heroName.value); heroName.value=''">Add</button>
-</div>
