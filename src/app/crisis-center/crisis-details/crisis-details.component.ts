@@ -1,14 +1,24 @@
-import { ActivatedRoute }    from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-@Component({
-  template: require( './crisis-details.component.html' )
+import { CrisisDaoService } from '../crisis-data/crisis-dao.service';
+
+@Component( {
+    template: require( './crisis-details.component.html' )
 })
 export class CrisisDetailsComponent implements OnInit {
-  id: number;
-  constructor(private activatedRoute: ActivatedRoute) {  }
+    public id: number;
+    public name: string;
 
-  ngOnInit() {
-    this.id = parseInt(this.activatedRoute.snapshot.params['id'], 10);
-  }
+    constructor(
+        private activatedRoute: ActivatedRoute,
+        private crisisDaoService: CrisisDaoService
+    ) { }
+
+    public ngOnInit() {
+        this.id = parseInt( this.activatedRoute.snapshot.params['id'], 10 );
+
+        this.crisisDaoService.getCrisis( this.id )
+            .then( crisis => this.name = crisis.name );
+    }
 }
