@@ -12,7 +12,7 @@ import { ContactDetailComponent } from './contact-detail/contact-detail.componen
     declarations: [ContactDetailComponent],
     imports: [
         ContactRoutingModule,
-        SharedModule
+        SharedModule.forChild( { color: 'powderblue' })
     ],
     providers: [ContactDaoService]
 })
