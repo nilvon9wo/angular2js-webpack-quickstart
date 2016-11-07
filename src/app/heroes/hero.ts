@@ -6,7 +6,6 @@ export class Hero {
     constructor(config: {id: number, name: string}) {
         this.id = config.id;
         this.name = config.name;
-        console.log('######## name', this.name);
     }
 
     public toggleState() {
