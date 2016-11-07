@@ -10,6 +10,7 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component';
 import { HeroDaoService } from './hero-data/hero-dao.service';
 import { HeroHeaderComponent } from './hero-header/hero-header.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
+import { HeroListBasicComponent } from './hero-list-basic/hero-list-basic.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 @NgModule( {
@@ -18,6 +19,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
         HeroDetailsComponent,
         HeroHeaderComponent,
         HeroListComponent,
+        HeroListBasicComponent,
         HeroSearchComponent,
     ],
     imports: [

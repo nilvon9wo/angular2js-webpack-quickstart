@@ -1,0 +1,10 @@
+<h3 highlight>My Heroes</h3>
+<ul class="tour-of-heroes">
+    <li
+        *ngFor="let hero of heroes"
+        class="hero"
+        (click)="hero.toggleState()"
+        [@heroState]="hero.state"
+        
+    ><span class="hero--badge">{{hero.id}}</span> <span>{{hero.name}}</span></li>
+</ul>
