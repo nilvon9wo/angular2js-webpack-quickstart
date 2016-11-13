@@ -11,21 +11,22 @@ import { HighlightDirectiveConfig } from './highlight-directive-config';
 @Directive( { selector: '[tourHighlight]' })
 export class HighlightDirective {
     @Input() set tourHighlight(colorName: string) {
-        if (colorName) {
-            this.normalColor = colorName;
-            this.highlight( this.normalColor );
-        }
+        this.normalColor = colorName;
     }
 
     private _defaultColor = 'red';
     @Input() set defaultColor(colorName: string) {
-        if (colorName) {
-            this.normalColor = colorName;
-            this.highlight( this.normalColor );
-        }
+        this.normalColor = colorName;
     }
     
-    private normalColor;
+    private _normalColor;
+    private set normalColor(colorName: string){
+        if (colorName) {
+            this._normalColor = colorName;
+            this.highlight( this._normalColor );
+        }
+    }
+
     private mouseOverColor = 'gold';
 
     
@@ -35,8 +36,7 @@ export class HighlightDirective {
         @Optional() config: HighlightDirectiveConfig
     ) {
         if ( config ) {
-            this.tourHighlight = this.normalColor || config.color || this._defaultColor;
-            this.highlight( this.normalColor );
+            this.tourHighlight = this._normalColor || config.color || this._defaultColor;
         }
     }
 
@@ -46,7 +46,7 @@ export class HighlightDirective {
     }
 
     @HostListener( 'mouseleave' ) onMouseLeave() {
-        this.highlight( this.normalColor );
+        this.highlight( this._normalColor );
     }
 
     private highlight( color: string ) {
@@ -56,4 +56,5 @@ export class HighlightDirective {
             color
         );
     }
+    
 }
