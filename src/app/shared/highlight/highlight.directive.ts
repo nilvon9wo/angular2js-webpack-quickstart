@@ -10,20 +10,37 @@ import { HighlightDirectiveConfig } from './highlight-directive-config';
 
 @Directive( { selector: '[tourHighlight]' })
 export class HighlightDirective {
-    private normalColor: string = 'yellow';
-    private mouseOverColor: string = 'gold';
+    @Input() set tourHighlight(colorName: string) {
+        if (colorName) {
+            this.normalColor = colorName;
+            this.highlight( this.normalColor );
+        }
+    }
 
+    private _defaultColor = 'red';
+    @Input() set defaultColor(colorName: string) {
+        if (colorName) {
+            this.normalColor = colorName;
+            this.highlight( this.normalColor );
+        }
+    }
+    
+    private normalColor;
+    private mouseOverColor = 'gold';
+
+    
     constructor(
         private elementRef: ElementRef,
         private renderer: Renderer,
         @Optional() config: HighlightDirectiveConfig
     ) {
         if ( config ) {
-            this.normalColor = config.color;
+            this.tourHighlight = this.normalColor || config.color || this._defaultColor;
+            this.highlight( this.normalColor );
         }
-        this.highlight( this.normalColor );
     }
 
+    
     @HostListener( 'mouseenter' ) onMouseEnter() {
         this.highlight( this.mouseOverColor );
     }

@@ -1,0 +1,18 @@
+<h2>Highlight Attribute Directive Demo</h2>
+<h3>Pick a highlight color</h3>
+<div>
+	<label for="highlight_green">
+		<input id="highlight_green" type="radio" name="colors" 
+		(click)="color='lightgreen'"/>Green
+	</label>
+	<label for="highlight_yellow">
+		<input id="highlight_yellow" type="radio" name="colors" 
+		(click)="color='yellow'"/>Yellow
+	</label>
+	<label for="highlight_cyan">
+		<input id="highlight_cyan" type="radio" name="colors" 
+		(click)="color='cyan'"/>Cyan
+	</label>
+</div>
+<p [tourHighlight]="color" >Highlight without default</p>
+<p [tourHighlight]="color" [defaultColor]="'violet'" >Highlight with default</p>

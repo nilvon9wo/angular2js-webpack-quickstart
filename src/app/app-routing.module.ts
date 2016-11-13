@@ -16,6 +16,13 @@ const routes: Routes = [
                 resolve( require( './heroes/heroes.module' ).HeroesModule );
             })
         })
+    },
+    {
+        path: 'shared', loadChildren: () => new Promise( resolve => {
+            ( require as any ).ensure( [], require => {
+                resolve( require( './shared/shared.module' ).SharedModule );
+            })
+        })
     }
 ];
 
