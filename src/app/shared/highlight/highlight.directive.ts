@@ -1,17 +1,23 @@
-import { Directive, ElementRef, Renderer } from '@angular/core';
+import { Directive, ElementRef, Optional, Renderer } from '@angular/core';
+import { HighlightDirectiveConfig } from './highlight-directive-config';
 
-@Directive({selector: '[highlight]'})
-
-/*
- * TODO:
- * app => gold
- * contact => powderblue
- * hero => biege
- */
+@Directive( { selector: '[highlight]' })
 
 export class HighlightDirective {
-    constructor(renderer: Renderer, elementRef: ElementRef) {
-        renderer.setElementStyle(elementRef.nativeElement, 'backgroundColor', 'gold'); //'powderblue', 'biege'
-        console.info(`& Contact highlight called for ${elementRef.nativeElement.tagName}`);
+    private color: string = 'yellow';
+
+    constructor(
+        elementRef: ElementRef,
+        renderer: Renderer,
+        @Optional() config: HighlightDirectiveConfig
+    ) {
+        if ( config ) {
+            this.color = config.color;
+        }
+        renderer.setElementStyle(
+            elementRef.nativeElement,
+            'backgroundColor',
+            this.color
+        );
     }
 }

@@ -26,7 +26,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
         CommonModule,
         FormsModule,
         HeroRoutingModule,
-        SharedModule.forChild( { color: 'powderblue' })
+        SharedModule.forChild( { color: '#885C39' })
     ],
     providers: [HeroDaoService]
 })
