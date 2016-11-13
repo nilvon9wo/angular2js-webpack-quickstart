@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Optional, Renderer } from '@angular/core';
 import { HighlightDirectiveConfig } from './highlight-directive-config';
 
-@Directive( { selector: '[highlight]' })
+@Directive( { selector: '[tourHighlight]' })
 
 export class HighlightDirective {
     private color: string = 'yellow';
