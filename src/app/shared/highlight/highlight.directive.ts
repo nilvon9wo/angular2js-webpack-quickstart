@@ -1,23 +1,42 @@
-import { Directive, ElementRef, Optional, Renderer } from '@angular/core';
+import {
+    Directive,
+    ElementRef,
+    HostListener,
+    Input,
+    Optional,
+    Renderer
+} from '@angular/core';
 import { HighlightDirectiveConfig } from './highlight-directive-config';
 
 @Directive( { selector: '[tourHighlight]' })
-
 export class HighlightDirective {
-    private color: string = 'yellow';
+    private normalColor: string = 'yellow';
+    private mouseOverColor: string = 'gold';
 
     constructor(
-        elementRef: ElementRef,
-        renderer: Renderer,
+        private elementRef: ElementRef,
+        private renderer: Renderer,
         @Optional() config: HighlightDirectiveConfig
     ) {
         if ( config ) {
-            this.color = config.color;
+            this.normalColor = config.color;
         }
-        renderer.setElementStyle(
-            elementRef.nativeElement,
+        this.highlight( this.normalColor );
+    }
+
+    @HostListener( 'mouseenter' ) onMouseEnter() {
+        this.highlight( this.mouseOverColor );
+    }
+
+    @HostListener( 'mouseleave' ) onMouseLeave() {
+        this.highlight( this.normalColor );
+    }
+
+    private highlight( color: string ) {
+        this.renderer.setElementStyle(
+            this.elementRef.nativeElement,
             'backgroundColor',
-            this.color
+            color
         );
     }
 }

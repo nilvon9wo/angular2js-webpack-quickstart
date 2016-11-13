@@ -11,7 +11,7 @@ import { UserServiceConfig } from './users/user-service-config';
     exports: [AppTitleComponent],
     imports: [
         CommonModule,
-        SharedModule.forChild( { color: 'gold' })
+        SharedModule
     ],
     providers: [UserService]
 })
