@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroDaoService } from '../hero-data/hero-dao.service';
+import { EditItem } from '../../editable/edit-item';
 
 @Component( {
     providers: [HeroDaoService],
@@ -12,7 +13,7 @@ import { HeroDaoService } from '../hero-data/hero-dao.service';
 })
 
 export class HeroListComponent implements OnInit {
-    public heroes: Hero[];
+    public heroes: Array<EditItem<Hero>> = new Array<EditItem<Hero>>();
     public selectedHero: Hero;
 
     constructor(
@@ -25,10 +26,9 @@ export class HeroListComponent implements OnInit {
         if ( !name ) {
             return;
         }
-
         this.heroDaoService.create( name )
             .then( hero => {
-                this.heroes.push( hero );
+                this.heroes.push( new EditItem( hero ) );
                 this.selectedHero = null;
             });
     }
@@ -36,7 +36,7 @@ export class HeroListComponent implements OnInit {
     public delete( deletedHero: Hero ): void {
         this.heroDaoService.delete( deletedHero.id )
             .then(() => {
-                this.heroes = this.heroes.filter( hero => hero !== deletedHero );
+                this.heroes = this.heroes.filter( hero => hero.item !== deletedHero );
                 if ( this.selectedHero === deletedHero ) {
                     this.selectedHero = null;
                 }
@@ -50,11 +50,22 @@ export class HeroListComponent implements OnInit {
 
     public initHeroes(): void {
         this.heroDaoService.getHeroes()
-            .then( heroes => this.heroes = heroes );
+            .then( daoHeroes => {
+                this.heroes = daoHeroes.map(item => new EditItem( item )); 
+            }); 
     }
 
     public ngOnInit(): void {
         this.initHeroes();
+    }
+
+    public onCanceled( editItem: EditItem<Hero> ) {
+        editItem.editing = false;
+    }
+
+    public onSaved( editItem: EditItem<Hero>, updatedHero: Hero ) {
+        editItem.item = updatedHero;
+        editItem.editing = false;
     }
 
     public onSelect( hero: Hero ): void {

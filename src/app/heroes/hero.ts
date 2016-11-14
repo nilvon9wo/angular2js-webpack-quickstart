@@ -1,6 +1,7 @@
 export class Hero {
     public id: number;
     public name: string;
+    public power: string;
     public state: string = 'inactive';
 
     constructor(config: {id: number, name: string}) {
