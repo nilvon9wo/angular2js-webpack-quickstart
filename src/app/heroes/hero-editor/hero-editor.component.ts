@@ -5,6 +5,7 @@ import { Hero } from '../hero';
 @Component( {
     selector: 'hero-editor',
     providers: [EditRestoreService],
+    styles: [require( './hero-editor.component.css' )],
     template: require( './hero-editor.component.html' )
 })
 
